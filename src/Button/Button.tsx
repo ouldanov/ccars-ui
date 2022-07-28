@@ -14,7 +14,7 @@ export function Button({
   variant = 'primary',
   disabled,
 }: ButtonProps) {
-  const className = `button ${variant}`;
+  const className = `button ${disabled ? 'disabled' : variant}`;
   return (
     <button className={className} onClick={onClick} disabled={disabled}>
       {children}

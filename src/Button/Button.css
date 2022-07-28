@@ -11,3 +11,7 @@
 .success {
   background-color: #51ff0c;
 }
+.disabled {
+  background-color: #F4F4F4;
+  color: #000;
+}
