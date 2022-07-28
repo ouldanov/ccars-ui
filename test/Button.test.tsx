@@ -18,18 +18,6 @@ describe('Button', () => {
       const button = container.querySelector('button');
       expect(button!.classList.contains('success')).toBeTruthy();
     });
-    test('disabled', () => {
-      const { asFragment } = render(
-        <Button disabled={true} onClick={console.log}>
-          render disabled
-        </Button>
-      );
-      expect(asFragment()).toMatchSnapshot(`
-              <DocumentFragment>
-                <button class="button primary" disabled>render disabled</button>
-              </DocumentFragment>
-            `);
-    });
   });
 
   describe('clickable', () => {
