@@ -4,19 +4,23 @@ import './Button.css';
 export type ButtonProps = {
   onClick(): void;
   children: ReactNode;
-  variant?: 'primary' | 'success';
+  type?: 'primary' | 'primary-round' | 'secondary' | 'link';
   disabled?: boolean;
+  className?: string;
 };
 
-export function Button({
+export const Button = ({
   children,
   onClick,
-  variant = 'primary',
+  type = 'primary',
   disabled,
-}: ButtonProps) {
-  const className = `button ${disabled ? 'disabled' : variant}`;
+  className = '',
+}: ButtonProps) => {
+  const cls = ['btn', type, className];
+  if (className) cls.push(className);
+  if (disabled) cls.push('disabled');
   return (
-    <button className={className} onClick={onClick} disabled={disabled}>
+    <button className={cls.join(' ')} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
